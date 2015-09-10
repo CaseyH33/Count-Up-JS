@@ -10,31 +10,33 @@ var countUp = function(num, count) {
     // }
 
     //For loop
-    // for(var i = count; i <= num; i+= count) {
-    //     output.push(i);
-    // }
+    for(var i = count; i <= num; i+= count) {
+        output.push(i);
+    }
 
     //Do While loop
-    var i = count;
-    do {
-        output.push(i);
-        i += count;
-        console.log(i);
-    } while(i <= num);
+    // var i = count;
+    // do {
+    //     output.push(i);
+    //     i += count;
+    //     console.log(i);
+    // } while(i <= num);
 
     return output;
 }
 
 
 
-// $(document).ready(function() {
-//
-//     $("form#countUp").submit(function(event) {
-//         var word = ($("input#word").val());
-//         var result = countUp(word);
-//
-//         $(".answer").text(result);
-//         $("#result").show();
-//         event.preventDefault();
-//     });
-// });
+$(document).ready(function() {
+
+    $("form#countUp").submit(function(event) {
+        var num = parseInt($("input#num").val());
+        var count = parseInt($("input#count").val());
+
+        var result = countUp(num, count);
+
+        $(".output").text(result);
+        $("#result").show();
+        event.preventDefault();
+    });
+});
