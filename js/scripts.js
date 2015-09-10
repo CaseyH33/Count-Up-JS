@@ -1,28 +1,40 @@
-var palindromes = function(word) {
-    var wordReverse = word.split('').reverse().join('');
+var countUp = function(num, count) {
 
-    if(word === wordReverse) {
-        return true;
-    } else {
-        return false;
-     }
+    var output = [];
+
+    //While loop
+    // var i = count;
+    // while(i<=num){
+    //     output.push(i);
+    //     i += count;
+    // }
+
+    //For loop
+    // for(var i = count; i <= num; i+= count) {
+    //     output.push(i);
+    // }
+
+    //Do While loop
+    var i = count;
+    do {
+        output.push(i);
+        i += count;
+        console.log(i);
+    } while(i <= num);
+
+    return output;
 }
 
-$(document).ready(function() {
 
-    $("form#palindromes").submit(function(event) {
-        var word = ($("input#word").val());
-        var result = palindromes(word);
-        var printOut = "";
 
-        if(result === true) {
-             printOut =  "Yes, it is a Palindrome!";
-        } else {
-            printOut = "No, this is not a Palindrome...";
-        }
-
-        $(".answer").text(printOut);
-        $("#result").show();
-        event.preventDefault();
-    });
-});
+// $(document).ready(function() {
+//
+//     $("form#countUp").submit(function(event) {
+//         var word = ($("input#word").val());
+//         var result = countUp(word);
+//
+//         $(".answer").text(result);
+//         $("#result").show();
+//         event.preventDefault();
+//     });
+// });
