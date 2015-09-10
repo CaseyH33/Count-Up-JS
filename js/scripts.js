@@ -1,3 +1,5 @@
+
+
 var countUp = function(num, count) {
 
     var output = [];
@@ -19,7 +21,6 @@ var countUp = function(num, count) {
     // do {
     //     output.push(i);
     //     i += count;
-    //     console.log(i);
     // } while(i <= num);
 
     return output;
@@ -35,7 +36,7 @@ $(document).ready(function() {
 
         var result = countUp(num, count);
 
-        $(".output").text(result);
+        $(".output").text(result.join(", "));
         $("#result").show();
         event.preventDefault();
     });
